@@ -1,0 +1,57 @@
+SCENARIO : Booking a Airbnb
+
+OBJECTS:
+	Tourist: 
+		State: name, no. of days, ppl no, sdate, return
+		Behaviour: signing in, book, pay
+	
+	Airbnb:
+		State:room no, addr
+		Behavior: booking, payment, login
+
+	Credit card:
+		State: number, exp, cvv, name, zip;
+		Behavior:payment
+PSEUDOCODE:
+
+class Tourist
+{
+String name;
+int nod,nop;
+Date sdate, rdate;
+signin(id, pswd);
+book(sdate, nod);
+}
+
+class Airbnb
+{ 
+int room no;
+String addrl1;
+pay(bookinID, amt);
+}
+
+class CC
+{
+String name;
+int number;
+date exp;
+int cvv;
+int zip;
+payment(number, amt);
+}
+
+class Book
+{
+public static void main(String args[])
+{
+Tourist t=new Tourist();
+t.signin(id, pswd);
+t.book(sdate,nod);
+Airbnb a=new Airbnb();
+a.pay(BooinID,amt);
+CC c=new CC();
+c.payment(number, amt);
+}
+}
+
+
