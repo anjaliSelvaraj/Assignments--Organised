@@ -1,0 +1,61 @@
+SCENARIO : Order for delivery
+
+OBJECTS:
+	Phone:
+		State: cphn no, sphn no
+		Behaviour: call, order
+	Consumer:
+		State: waiting, received
+		Behaviour: call, order, track, pay
+	Shop:
+		State: open, closed
+		Behaviour: pack, deliver
+	Order:
+		State: availability,initialised,in process, out for delivery, done, price
+		Behaviour: packed, processing,delivered
+
+PSEUDOCODE:
+
+
+class Phone
+{
+int cphn no;
+int sphn no;
+order_id call(cphn no, sphn no);
+order();
+}
+
+class Consumer
+{
+Boolean waiting, received;
+order_status track(order_id, cphn no);
+payment(order_id, amt);
+}
+
+class Shop 
+{
+boolean open, closed;
+pack(order_id);
+deliver(order_id);
+}
+
+class Order
+{
+int availability;
+int order id;
+String order_stat={initiaised, in process, out for delivery, done};
+float price;
+String addr;
+}
+
+class Delivery
+{
+public static void main(String args[])
+{
+Phone p=new Phone();
+p.call(cphn no,sphn no);
+p.order();
+Shop s= new Shop();
+s.pack();
+s.deliver();
+}
