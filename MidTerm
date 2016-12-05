@@ -1,0 +1,124 @@
+1.
+import java.io.IOException;
+import java.util.Scanner;
+
+public class ExcelSheetColumns {
+	int generateColNum(char c)
+	{
+		int column_no=0;
+		column_no=Integer.valueOf(c)-64;
+		return column_no;
+		
+	}
+	double generateColNum2(String title)
+	{   double column_no=0;
+	    int l=title.length();
+	    int index=l-1;
+	    int power=0;
+		while(index>=0)
+		{
+		column_no=column_no+(generateColNum(title.charAt(index))*(Math.pow(26.0d,power)));	
+		index--;
+		power++;
+		} 
+		return column_no;
+		
+	}
+	
+	void getTitle()
+	{
+		Scanner s=new Scanner(System.in);
+		String title=s.next();
+		if(title.length()==1)
+			System.out.println(title+" --> " + generateColNum(title.charAt(0)));
+		
+		else
+			System.out.println(title+" --> " + ((int)(generateColNum2(title))));
+		
+	}
+
+	public static void main(String args[])throws IOException
+	{
+	ExcelSheetColumns ea=new ExcelSheetColumns();
+	System.out.println("Enter a Column name");
+	ea.getTitle() ;
+	
+	
+	}
+}
+
+2.import java.io.IOException;
+import java.util.Scanner;
+
+public class LongestPalin {
+	String findPalin(String str)
+	{   char c[]=str.toCharArray();
+	    int longest=0;
+		StringBuilder result = new StringBuilder();
+		for(int strt=c.length/2;strt>0;strt--)
+		{
+			for(int end=c.length/2;end<c.length;end++)
+			{
+				if(c[strt]==c[end] && ((end-strt)+1>longest))
+				{   StringBuilder sub=new StringBuilder(str.substring(strt, end));
+				      if(sub.equals(sub.reverse()))
+				      {
+					longest=sub.length();
+					result.append(sub);
+				      }
+			    }
+			}
+		}
+		return result.toString();
+	}
+	
+	public static void main(String arg[])throws IOException
+	{
+		LongestPalin lp=new LongestPalin();
+		System.out.println("Enter a String");
+		String str=lp.getString();
+		String result=lp.findPalin(str);
+		System.out.println(result +" length-->" + result.length());
+	}
+
+	String getString() {
+		Scanner s= new Scanner(System.in);
+		return s.next();
+		
+	}
+	// please use what u have learnt like JUnit test to test your code and make sure your program works properly;
+	// -8;
+
+}
+
+bonus:
+public class Target {
+int findTarget(int num[],int sum){
+	int count=0;
+	for(int i=0;i<num.length;i++)
+	{
+	for(int j=i+1;j<num.length;j++)
+		if(num[i]+num[j]==sum)
+			count++;
+	}
+	return count;
+}
+}
+public class TargetMain {
+public static void main(String arg[])
+{
+	Scanner s=new Scanner(System.in);
+	System.out.println("Enter the size");
+	int n=s.nextInt();
+	int num[]=new int[n];
+	System.out.println("Enter the elements");
+	for(int i=0;i<n;i++)
+		num[i]=s.nextInt();
+	System.out.println("Enter sum");
+	int sum=s.nextInt();
+	Target t=new Target();
+	System.out.println(t.findTarget(num, sum));
+}
+}
+
+
