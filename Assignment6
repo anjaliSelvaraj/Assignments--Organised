@@ -1,0 +1,154 @@
+
+
+
+
+package assignment6;
+
+public class Pet {
+	private String name,color,owner;
+	protected int sex;
+	public static final int MALE=0,FEMALE=1,SPAYED=2,NEUTERED=3;
+	public Pet(String name, String owner, String color)
+	{
+		this.name=name;
+		this.owner=owner;
+		this.color=color;
+	}
+	public String getPetName()
+	{
+		return this.name;
+	}
+	public String getOwnerName()
+	{
+		return this.owner;
+	}
+    public String getColor()
+    {
+    	return this.color;
+    }
+	public void setSex(int sexid)
+	{
+		if (sexid==0)
+			this.sex=MALE;
+		if (sexid==1)
+			this.sex=FEMALE;
+		if (sexid==2)
+			this.sex=SPAYED;
+		if (sexid==3)
+			this.sex=NEUTERED;
+	}
+	public String getSex()
+	{
+		this.sex=sex;
+		return String.valueOf(sex);
+	}
+	public String toString()
+	{
+		String s=getPetName() +" owned by " +getOwnerName() +"\nColor: "+getColor() +"\nSex: "+getSex();
+		return s;
+	}
+
+}
+package assignment6;
+
+public class Cat extends Pet implements Boardable 
+{   String hairLength;
+    String startDate,endDate;
+	public Cat(String name, String ownerName, String color, String hairLength)
+	{
+	super.Pet(this.name, this.ownerName, this.color);
+	this.hairLength=hairLength;
+	}
+	String getHairLength()
+	{
+		return hairLength;
+	}
+	String toString(){
+		
+	}
+	void setBoardStart(int month, int day, int year)
+	{
+		startDate=String.valueOf(month)+String.valueOf(day)+String.valueOf(year);
+	}
+	void setBoardEnd(int month, int day, int year)
+	{
+		endDate=String.valueOf(month)+String.valueOf(day)+String.valueOf(year);	
+	}
+	boolean boarding(int month, int day, int year)
+	{
+		if(month>0 && month<=12 && day>0 && day<=31 )
+			return true;
+	}
+
+
+
+}
+package assignment6;
+
+public class Dog extends Pet implements Boardable 
+	{   String size;
+	    String startDate,endDate;
+		public Dog(String name, String ownerName, String color, String size)
+		{
+		super.Pet(this.name, this.ownerName, this.color);
+		this.size=size;
+		}
+		String getHairLength()
+		{
+			return size;
+		}
+		String toString(){
+			super.toString();
+			return size;
+		}
+		void setBoardStart(int month, int day, int year)
+		{
+			startDate=String.valueOf(month)+String.valueOf(day)+String.valueOf(year);
+		}
+		void setBoardEnd(int month, int day, int year)
+		{
+			endDate=String.valueOf(month)+String.valueOf(day)+String.valueOf(year);	
+		}
+		boolean boarding(int month, int day, int year)
+		{
+			if(month>0 && month<=12 && day>0 && day<=31 )
+				return true;
+		}
+
+
+
+	}
+
+
+}
+package assignment6;
+
+public interface Boardable {
+	public void setBoardStart(int month, int day, int year); 
+	public void setBoardEnd(int month, int day, int year); 
+	public boolean boarding(int month, int day, int year);
+
+}
+
+
+package assignment6;
+
+public class AnimalHospital {
+	AnimalHospital()
+	{
+		
+	}
+	void printPetInfoByName(String name)
+	{
+		
+	}
+	void printPetInfoByOwner(String name)
+	{
+		
+	}
+	void printPetsBoarding(int month, int day, int year)
+	{
+		
+	}
+
+}
