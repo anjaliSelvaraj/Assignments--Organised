@@ -1,0 +1,41 @@
+class DessertItem
+{
+protected String name;
+
+public abstract int getCost()
+{
+
+return cost;
+}
+public DessertItem()
+{
+}
+public DessertItem(name)
+{
+}
+public final String getName()
+{
+
+return name;
+}
+}
+
+class Candy extends DessertItem
+{
+float weight;
+float ppp;
+}
+
+class Cookie extends DessertItem
+{
+int number;
+float ppd;
+}
+
+class IceCream extends DessertItem
+{
+float cost;
+}
+class Sundae extends Icecream
+{
+}
