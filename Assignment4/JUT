@@ -1,0 +1,115 @@
+package power3;
+
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class Power3test {
+
+	@Test
+	public void test() {
+		power3 p=new power3();
+		int n=0;
+		Assert.assertEquals(p.find3Pow(0),0);
+		n=-1;
+		Assert.assertEquals(p.find3Pow(1),0);
+		
+		
+	}
+
+}
+
+
+package digitCount;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+
+public class DigitCountTest {
+	@Test
+	public void test() {
+		DigitCount cd1=new DigitCount();
+		int n=0;
+		Assert.assertEquals(1,cd1.countDigit(n));
+		n=-10;
+		Assert.assertEquals(2,cd1.countDigit(n));
+	}
+
+}
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+
+public class OddEvenTest {
+
+	@Test
+	public void test() {
+		OddEven test= new OddEven();
+		int n=-0;
+		Assert.assertEquals(0,test.printEven(n));
+		Assert.assertEquals(0, test.printOdd(n));
+	}
+
+}
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class LastWordLengthTest {
+
+	@Test
+	public void test() {
+		String wrd="Length  ";
+		LastWordLength test=new LastWordLength();
+		Assert.assertEquals(6,test.lastWordLen(wrd));
+		wrd="  Length";
+		Assert.assertEquals(6,test.lastWordLen(wrd));
+		wrd="length,,, ";
+		Assert.assertEquals(6,test.lastWordLen(wrd));
+		
+	}
+
+}
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+import junit.framework.Assert;
+
+public class RevVowelsTest {
+
+	@Test
+	public void test() {
+		String wrd="s";
+		RevVowels test=new RevVowels();
+		Assert.assertEquals(wrd,test.revVowels(wrd));
+		wrd="SEad";
+		Assert.assertEquals(wrd, test.revVowels(wrd));
+		
+		
+	}
+}
+import static org.junit.Assert.*;
+
+import org.junit.Assert;
+import org.junit.Test;
+
+public class RevreseSentTest {
+
+	@Test
+	public void test() {
+		RevreseSent test =new RevreseSent();
+		String sent="I  ";
+		Assert.assertEquals("I",test.revSent(sent));
+	}
+
+}
+
