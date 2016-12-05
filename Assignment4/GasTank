@@ -1,0 +1,56 @@
+class GasTank
+{
+private double amt=0;
+double addGas(addx)
+{
+amt=amt+addx;
+return amt;
+}
+double useGas(usex)
+{
+amt=amt-usex;
+return amt;
+}
+double getGasLevel()
+{
+return amt;
+}
+}
+class Car
+{
+private String driver;
+private String carplte;
+private double price;
+Car(driver,carplte,price)
+{
+this.driver=driver;
+this.carplte=carplte;
+this.price=price;
+}
+getDriver(driver)
+{
+System.out.println(driver);
+}
+getCarplte(carplte)
+{
+System.out.println(Carplte);
+}
+getPrice(price)
+{
+System.out.println(price);
+}
+setDriver(driver)
+{
+this.driver=driver;
+}
+}
+class Driver
+{
+private int age;
+private float exp;
+private String car_name;
+private double GasVal;
+
+addGas(GasVal);
+
+}
