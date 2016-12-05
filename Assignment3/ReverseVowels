@@ -1,0 +1,55 @@
+import java.util.Scanner;
+
+public class RevVowels {
+	char[] revVowels(String s)
+	{
+		RevVowels rv=new RevVowels();
+		char c[]=s.toCharArray();
+		int left=0;
+		int right=c.length-1; char t;
+		while(left<=right)
+		{	
+			if(rv.isVowel(c[left]) && rv.isVowel(c[right]))
+					{
+				t=c[left];
+				c[left]=c[right];
+				c[right]=t;
+			left++; right--;
+					}
+			else if(rv.isVowel(c[left]))
+				right--;
+			else if(rv.isVowel(c[right]))
+				left++;
+			else
+			{
+				left++; right--;
+			}
+			}
+		return c;
+		
+		
+	}
+	boolean isVowel(char ch)
+	{
+		char v[]={'a','e','i','o','u'};
+		boolean b=false;
+		for(int j=0;j<5;j++)	
+		 if(ch==v[j])
+		  b=true;
+		 return b;
+	}
+	public static void main(String arg[])
+	{
+		
+		Scanner s1=new Scanner(System.in);
+		System.out.println("enter a string");
+		String s=s1.next();
+		RevVowels rv=new RevVowels();
+		char res[]=rv.revVowels(s);
+	    for(int k=0;k<res.length;k++)
+	    {
+	    	System.out.print(res[k]);
+	    }
+	}
+
+}
