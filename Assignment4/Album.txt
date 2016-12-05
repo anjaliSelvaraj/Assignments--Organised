@@ -1,0 +1,32 @@
+class MusicAlbum
+{
+private String albumtitle;
+private String singer;
+private double price;
+
+setAlbumTitle(albumtitle)
+{
+this.albumtitle=albumtitle;
+}
+setSinger(singer)
+{
+this.singer=singer;
+}
+double getPrice(albumtitle,singer)
+{
+this.price=price;
+return price;
+}
+}
+class Main
+{
+public static void main(String args[])
+{
+Scanner s1=new Scanner(System.in);
+MusicAlbum ma=new MusicAlbum();
+System.out.println("Enter the albumtitle,singer");
+ma.setAlbumTitle(s1.next());
+ma.setSinger(s1.next());
+System.out.println(ma.getPrice(albumtitle,singer));
+}
+}
