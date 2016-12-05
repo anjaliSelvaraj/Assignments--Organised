@@ -1,0 +1,46 @@
+import java.util.Scanner;
+
+public class OddEven {
+	int[] printEven(int n)
+	{
+		int a[]=new int[n];
+		int k=0;
+		for(int i=0;i<2*n;i++)
+		
+			if(i%2==0)
+			{
+				a[k]=i;
+				k++;
+			}           
+				return a;
+	}
+	int[] printOdd(int n)
+	{
+		int a[]=new int[n];
+		int k=0;
+		for(int i=0;i<2*n;i++)
+				if(i%2!=0)
+		{
+				a[k]=i;
+				k++;
+		}
+		return a;
+	}
+	public static void main(String arg[])
+	{
+		Scanner s1=new Scanner(System.in);
+		int a[];
+		System.out.println("Enter n");
+		int n=s1.nextInt();
+		OddEven oe=new OddEven();
+		if(n%2==0)
+			a=oe.printEven(n);
+		else
+			a=oe.printOdd(n);
+		for(int i=0;i<n;i++)
+			System.out.println(a[i]);
+		
+		
+	}
+
+}
