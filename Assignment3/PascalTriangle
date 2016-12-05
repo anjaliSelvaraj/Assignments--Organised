@@ -1,0 +1,30 @@
+
+public class twoD {
+	public static void main(String args[]){
+int a[][]= new int[5][9];
+ int k=4;
+ for(int i=0;i<5;i++)
+ {
+ 	for(int j=0;j<9;j++)
+		if(j==k+2*i || j==k)
+		{
+			a[i][j]=1;
+			if(i<3)
+			a[i+2][j]=i+2;
+		}
+		k--;
+		a[4][4]=6;
+ }
+ 	for(int l=0;l<5;l++)
+ 	{
+ 		for(int m=0;m<9;m++)
+ 		{
+ 			if(a[l][m]==0)
+ 				System.out.print(" ");
+ 			else
+ 		    System.out.print(a[l][m]);
+ 		}
+ 			System.out.println();
+ 	}
+	}
+	}
