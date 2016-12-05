@@ -1,0 +1,53 @@
+ASSIGNMENT 1
+SCENARIO : Pay tuition fee
+
+OBJECTS:
+Student:
+	State: under graduate, graduate, dept
+	Behavior: log in, pay
+Profile:
+	State: acc no, nuid, login ID, pswd
+	Behavior: sign in, payment, e receipt 
+Fee:
+	State: paid, due,amount
+
+PSEUDOCODE:
+
+class Student
+{
+boolean ug;
+boolean ms;
+String dept;
+String logIn(Profile id,Profile pswd);
+String pay(Fee amt,Profile nuid);
+}
+
+class Profile
+{
+int accno;
+int nuid;
+String login_id, pswd;
+String ereceipt(Fee amt, Profile nuid);
+}
+
+class Fee
+{
+Boolean paid;
+Boolean due;
+Float amt;
+}
+
+class Pay
+{
+public static void main(String arg[])
+{
+Student s1=new Student();
+s1.login(id, pswd);
+s1.pay(amt, nuid);
+Profile p1= new Profile();
+p1.ereceipt(amt, nuid);
+Fee f1=new Fee();
+f1.paid= "true";
+
+}
+}
